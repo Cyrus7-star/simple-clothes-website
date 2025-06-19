@@ -44,4 +44,46 @@ button {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+@media screen and (max-width: 600px) {
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .product {
+    width: 90%;
+  }
+
+  #searchInput {
+    width: 90%;
+  }
+}
+form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+form button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+}
