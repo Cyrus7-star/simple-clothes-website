@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🛒 Your Shopping Cart</h1>
+  <div id="cart-items"></div>
+  <h2 id="total"></h2>
+
+  <h3>Pay Now via UPI</h3>
+  <p>Scan QR or use UPI ID below:</p>
+  <p><strong>UPI ID:</strong> 9972283782@axl</p>
+  <img src="https://chart.googleapis.com/chart?cht=upi&chs=300x300&chl=upi://pay?pa=9972283782@axl&pn=YourStore&cu=INR" alt="UPI QR Code" />
+
+  <p>After payment, please send a screenshot to our WhatsApp or email for order confirmation.</p>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const container = document.getElementById('cart-items');
+    let total = 0;
+
+    if (cart.length === 0) {
+      container.innerHTML = '<p>Your cart is empty.</p>';
+    } else {
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.innerHTML = `<p>${item.name} - ₹${item.price}</p>`;
+        container.appendChild(div);
+        total += item.price;
+      });
+    }
+
+    document.getElementById('total').innerText = `Total: ₹${total}`;
+  </script>
+</body>
+</html>
+
